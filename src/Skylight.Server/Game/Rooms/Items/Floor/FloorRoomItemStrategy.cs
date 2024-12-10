@@ -31,6 +31,7 @@ internal sealed class FloorRoomItemStrategy : IFloorRoomItemStrategy
 		this.RegisterBuilder<IFurniMaticGiftFurniture, FurniMaticGiftRoomItemBuilder>();
 		this.RegisterBuilder<IStickyNotePoleFurniture, StickyNotePoleRoomItemBuilder>();
 		this.RegisterBuilder<ISoundMachineFurniture, SoundMachineRoomItemBuilder>();
+		this.RegisterBuilder<IDiceFurniture, DiceRoomItemBuilder>();
 		this.RegisterBuilder<IRollerFurniture, RollerRoomItemBuilder>();
 		this.RegisterBuilder<IBasicFloorFurniture, BasicFloorRoomItemBuilder>();
 		this.RegisterBuilder<IUnitSayTriggerFurniture, UnitSayTriggerRoomItemBuilder>();

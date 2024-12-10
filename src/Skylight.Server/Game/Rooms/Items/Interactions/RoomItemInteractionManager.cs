@@ -24,6 +24,7 @@ internal sealed class RoomItemInteractionManager : IRoomItemInteractionManager
 			[typeof(IStickyNoteInteractionHandler)] = new StickyNoteInteractionHandler(),
 			[typeof(ISoundMachineInteractionManager)] = new SoundMachineInteractionHandler(),
 			[typeof(IRollerInteractionHandler)] = new RollerInteractionHandler(room),
+			[typeof(IDiceInteractionManager)] = new DiceInteractionHandler(),
 			[typeof(IWiredEffectInteractionHandler)] = wiredInteractionHandler,
 			[typeof(IUnitSayTriggerInteractionHandler)] = new UnitSayTriggerInteractionHandler(wiredInteractionHandler),
 			[typeof(IUnitEnterRoomTriggerInteractionHandler)] = new UnitEnterRoomTriggerInteractionHandler(wiredInteractionHandler),
@@ -89,6 +90,13 @@ internal sealed class RoomItemInteractionManager : IRoomItemInteractionManager
 		else if (furniture is IWiredEffectFurniture)
 		{
 			handler = typeof(IWiredEffectInteractionHandler);
+
+			return true;
+		}
+
+		else if (furniture is IDiceFurniture)
+		{
+			handler = typeof(IDiceInteractionManager);
 
 			return true;
 		}
